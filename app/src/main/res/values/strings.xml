@@ -2,7 +2,7 @@
     <string name="app_name">Workout Timer</string>
     <string name="workout_phase_name">Workout!</string>
     <string name="rest_phase_name">Time to Rest</string>
-    <string name="duration_text_placeholder">44.5 seconds remaining</string>
+    <string name="duration_text_placeholder">50</string>
     <string name="workout_duration_label">Workout Duration:</string>
     <string name="workout_input_place_holder_text">60</string>
     <string name="rest_input_placeholder_text">30</string>

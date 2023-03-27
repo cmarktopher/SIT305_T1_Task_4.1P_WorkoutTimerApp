@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+I wanted to create a circular progress bar with a timer in the middle.
+This tutorial provided exactly what I needed:
+https://www.youtube.com/watch?v=YsHHXg1vbcc
+-->
+
+<!-- As the video explains, layer lists allow items to be stacked on top of each other -->
+<!-- The last item will be at the top layer -->
+<!-- Despite this feature, I decided to just have a single item for one progress bar and no background-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+
+        <rotate
+            android:fromDegrees="270"
+            android:toDegrees="270">
+
+
+            <!-- Defining the fill of the circular shape -->
+            <shape
+                android:shape="ring"
+                android:thicknessRatio="20"
+                android:useLevel="true"
+                >
+                <solid android:color="@color/green_700" />
+            </shape>
+
+        </rotate>
+
+    </item>
+
+</layer-list>
