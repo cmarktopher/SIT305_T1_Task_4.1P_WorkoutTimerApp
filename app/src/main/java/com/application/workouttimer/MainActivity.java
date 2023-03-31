@@ -2,6 +2,7 @@ package com.application.workouttimer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -42,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
     // Timer Handling
     private CountDownTimer countDownTimer;
 
+    // Sound
+    MediaPlayer mediaPlayer;
+
     // Handler allowing communication between the count down timer and the main thread
     // To my understanding, the count down timer is working in a different thread to the UI/Main thread
     // Apparently, we shouldn't have UI updates performed within a background thread due to possible lag and potentially crashes (I did try to do this anyway and it was working fine, but perhaps the ui updates were quick in this case?)
@@ -74,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
         handler = new Handler();
         timerState = TimerState.Workout;
+        mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.notification);
 
     }
 
@@ -139,6 +144,9 @@ public class MainActivity extends AppCompatActivity {
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
+
+                        // Play audio on timer finish
+                        mediaPlayer.start();
 
                         // Swap states and modify properties accordingly.
                         // Keeping it simple for now, but would need a better way of handling these states.

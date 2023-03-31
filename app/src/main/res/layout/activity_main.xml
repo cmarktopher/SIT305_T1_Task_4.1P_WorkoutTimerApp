@@ -5,6 +5,7 @@
     android:id="@+id/currentDurationProgressBar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -27,7 +28,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:text="@string/workout_phase_name"
-            android:textColor="@color/dark_grey"
+            android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -43,14 +44,14 @@
                 android:layout_height="250dp"
                 android:layout_gravity="center_horizontal"
                 android:indeterminateOnly="false"
+                android:max="100"
+                android:progress="100"
                 android:progressDrawable="@drawable/circular_progress_bar"
+                android:scaleX="-1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:scaleX="-1"
-                android:progress="100"
-                android:max="100" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/durationText"
@@ -58,8 +59,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="@string/duration_text_placeholder"
-                android:textColor="@color/dark_grey"
-                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -79,9 +80,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:textSize="15sp"
-                android:textColor="@color/dark_grey"
-                android:text="@string/workout_duration_label" />
+                android:text="@string/workout_duration_label"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/workoutDurationInput"
@@ -93,9 +95,9 @@
                 android:inputType="number|textPersonName"
                 android:minHeight="48dp"
                 android:text="@string/workout_input_place_holder_text"
-                android:textColor="@color/dark_grey"
+                android:textColor="@color/white"
                 android:textIsSelectable="false"
-                tools:ignore="LabelFor" />
+                tools:ignore="LabelFor,DuplicateSpeakableTextCheck" />
         </LinearLayout>
 
         <LinearLayout
@@ -111,9 +113,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:textSize="15sp"
-                android:textColor="@color/dark_grey"
-                android:text="@string/rest_duration_label" />
+                android:text="@string/rest_duration_label"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/restDurationInput"
@@ -125,7 +128,7 @@
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:text="@string/rest_input_placeholder_text"
-                android:textColor="@color/dark_grey"
+                android:textColor="@color/white"
                 tools:ignore="LabelFor" />
         </LinearLayout>
 
@@ -150,12 +153,12 @@
             <Button
                 android:id="@+id/stopButton"
                 style="?android:attr/buttonBarButtonStyle"
-                android:backgroundTint="@color/red_500"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:text="@string/stop_button_label" />
+                android:backgroundTint="@color/red_500"
+                android:text="@string/stop_button_label"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
